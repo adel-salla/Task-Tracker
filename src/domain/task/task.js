@@ -6,51 +6,59 @@ class Task {
     #status;
     #createdDate;
     #updatedDate;
-    constructor(id, description){
+    constructor(id, description, now){
         this.#id = id;
+
+        if (typeof description !== 'string' || description.trim() === '') 
+            throw new Error("Description can't be empty");
         this.#description = description;
+
         this.#status = STATUSES.NOT_DONE;
-        this.#createdDate = new Date();
-        this.#updatedDate = new Date();
+        this.#createdDate = now;
+        this.#updatedDate = now;
     }
 
     getId(){
         return this.#id;
     }
 
-    changeDescription(description){
-        if (typeof description !== 'string' || description.trim() === '') return false;
+    changeDescription(description, now){
+        if (typeof description !== 'string' || description.trim() === '') 
+            throw new Error("Description can't be empty");
 
         this.#description = description;
-        this.#updatedDate = new Date();
+        this.#updatedDate = now;
     }
     getDescription(){
         return this.#description
     }
     
-    markDone(){
-        if (this.#status == STATUSES.DONE) return false;
+    markDone(now){
+        if (this.#status === STATUSES.DONE) 
+            throw new Error(`The task is already marked as ${STATUSES.DONE}`);
+        if (!(now instanceof Date))
+            throw new Error("now must be a Date instance");
         
         this.#status = STATUSES.DONE;
-        this.#updatedDate = new Date();
-        
-        return true;
+        this.#updatedDate = now;
     }
-    startProgress(){
-        if (this.#status == STATUSES.IN_PROGRESS) return false;
+    startProgress(now){
+        if (this.#status === STATUSES.IN_PROGRESS) 
+            throw new Error(`The task is already marked as ${STATUSES.IN_PROGRESS}`);
+        if (!(now instanceof Date))
+            throw new Error("now must be a Date instance");
         
         this.#status = STATUSES.IN_PROGRESS;
-        this.#updatedDate = new Date();
-        
-        return true;
+        this.#updatedDate = now;
     }
-    reset(){
-        if (this.#status == STATUSES.NOT_DONE) return false;
+    reset(now){
+        if (this.#status === STATUSES.NOT_DONE) 
+            throw new Error(`The task is already marked as ${STATUSES.NOT_DONE}`);
+        if (!(now instanceof Date))
+            throw new Error("now must be a Date instance");
         
         this.#status = STATUSES.NOT_DONE;
-        this.#updatedDate = new Date();
-        
-        return true;
+        this.#updatedDate = now;
     }
     getStatus(){
         return this.#status;
