@@ -1,7 +1,7 @@
 const { Task } = require("../../domain/task/task");
 
-function addTask(id, description, now){
-    const newTask = new Task(id, description, now);
+function addTask(taskId, description, dateTimeNow){
+    const newTask = new Task(taskId, description, dateTimeNow);
 
     return newTask;
 }

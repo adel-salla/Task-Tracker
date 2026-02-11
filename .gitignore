@@ -1,3 +1,4 @@
 /node_modules
 TaskTracker.txt
 tasks.json
+./src/testing.js

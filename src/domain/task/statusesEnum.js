@@ -4,4 +4,4 @@ const STATUSES = Object.freeze({
     DONE: "done"
 });
 
-module.exports = { STATUSES }
+module.exports = { STATUSES };
