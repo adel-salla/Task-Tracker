@@ -11,7 +11,11 @@ class JsonTaskRepository {
             tasks: this.#tasks
         });
     }
-    #createTask(id, description, status, createdDate, updatedDate){
+    #createTask(id,
+        description,
+        status,
+        createdDate,
+        updatedDate){
         const task = new Task(id, description, new Date(createdDate));
         
         switch (status){
@@ -62,7 +66,12 @@ class JsonTaskRepository {
         const targetTask = this.#tasks.find(task => task.id === taskId);
         if (!targetTask) return null;
 
-        const task = this.#createTask(taskId, targetTask.description, targetTask.status, targetTask.createdDate, targetTask.updatedDate);
+        const task = this.#createTask(taskId,
+            targetTask.description,
+            targetTask.status,
+            targetTask.createdDate,
+            targetTask.updatedDate
+        );
 
         return task;
     }
@@ -74,6 +83,16 @@ class JsonTaskRepository {
         this.#tasks.splice(taskIndex, 1);
 
         this.#persist();
+    }
+    getAllTasks(){
+        return this.#tasks.map(task => 
+            this.#createTask(task.id,
+                task.description,
+                task.status,
+                task.createdDate,
+                task.updatedDate
+            )
+        );
     }
 }
 
