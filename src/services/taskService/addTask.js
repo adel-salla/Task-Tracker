@@ -1,9 +1,11 @@
 const { Task } = require("../../domain/task/task");
 
-function addTask(taskId, description, dateTimeNow){
-    const newTask = new Task(taskId, description, dateTimeNow);
+function addTask(description, repository){
+    const taskId = repository.generateId();
 
-    return newTask;
+    const newTask = new Task(taskId, description, new Date());
+
+    repository.insertTask(newTask);
 }
 
 module.exports = { addTask };
