@@ -64,7 +64,8 @@ class JsonTaskRepository {
     }
     getTask(taskId){
         const targetTask = this.#tasks.find(task => task.id === taskId);
-        if (!targetTask) return null;
+        if (!targetTask)
+            throw new Error("Task not found");
 
         const task = this.#createTask(taskId,
             targetTask.description,
