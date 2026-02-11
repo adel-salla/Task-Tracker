@@ -11,11 +11,15 @@ class JsonTaskRepository {
             tasks: this.#tasks
         });
     }
+<<<<<<< HEAD
     #createTask(id,
         description,
         status,
         createdDate,
         updatedDate){
+=======
+    #createTask(id, description, status, createdDate, updatedDate){
+>>>>>>> d35a86b134bea9092f7944ecda55810c7901a7f4
         const task = new Task(id, description, new Date(createdDate));
         
         switch (status){
@@ -66,12 +70,16 @@ class JsonTaskRepository {
         const targetTask = this.#tasks.find(task => task.id === taskId);
         if (!targetTask) return null;
 
+<<<<<<< HEAD
         const task = this.#createTask(taskId,
             targetTask.description,
             targetTask.status,
             targetTask.createdDate,
             targetTask.updatedDate
         );
+=======
+        const task = this.#createTask(taskId, targetTask.description, targetTask.status, targetTask.createdDate, targetTask.updatedDate);
+>>>>>>> d35a86b134bea9092f7944ecda55810c7901a7f4
 
         return task;
     }
@@ -84,6 +92,7 @@ class JsonTaskRepository {
 
         this.#persist();
     }
+<<<<<<< HEAD
     getAllTasks(){
         return this.#tasks.map(task => 
             this.#createTask(task.id,
@@ -97,3 +106,6 @@ class JsonTaskRepository {
 }
 
 module.exports = { JsonTaskRepository };
+=======
+}
+>>>>>>> d35a86b134bea9092f7944ecda55810c7901a7f4
