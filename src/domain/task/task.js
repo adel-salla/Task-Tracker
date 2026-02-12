@@ -33,30 +33,15 @@ class Task {
         return this.#description
     }
     
-    markDone(now){
-        if (this.#status === STATUSES.DONE) 
-            throw new Error(`The task is already marked as ${STATUSES.DONE}`);
-        if (!(now instanceof Date))
-            throw new Error("now must be a Date instance");
-        
+    markDone(now){   
         this.#status = STATUSES.DONE;
         this.#updatedDate = now;
     }
     startProgress(now){
-        if (this.#status === STATUSES.IN_PROGRESS) 
-            throw new Error(`The task is already marked as ${STATUSES.IN_PROGRESS}`);
-        if (!(now instanceof Date))
-            throw new Error("now must be a Date instance");
-        
         this.#status = STATUSES.IN_PROGRESS;
         this.#updatedDate = now;
     }
     reset(now){
-        if (this.#status === STATUSES.NOT_DONE) 
-            throw new Error(`The task is already marked as ${STATUSES.NOT_DONE}`);
-        if (!(now instanceof Date))
-            throw new Error("now must be a Date instance");
-        
         this.#status = STATUSES.NOT_DONE;
         this.#updatedDate = now;
     }

@@ -42,7 +42,7 @@ class JsonTaskRepository {
     }
     
     generateId(){
-        return ++this.#lastId;
+        return String(++this.#lastId);
     }
     insertTask(task){
         const existingIndex = this.#tasks.findIndex(t => t.id === task.getId());
