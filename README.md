@@ -1,24 +1,31 @@
-#Task Tracker CLI
-<p>A simple task management tool built with Node.js using a clean architecture: domain, repository, use cases, and CLI adapter.</p>
+# Task Tracker CLI
+A simple task management tool built with Node.js using a clean architecture: domain, repository, use cases, and CLI adapter.
 
-[1. Installation](##Installation)
-[2. Usage](##Usage)
-[3. Commands](##Commands)
-[4. Development](##Development)
-[5. License](##License)
+---
 
-##Installation
-1. Clone the repo:
-<pre>```
+## Table of Contents
+
+1. [Installation](##Installation)
+2. [Usage](##Usage)
+3. [Commands](##Commands)
+4. [Development](##Development)
+5. [License](##License)
+
+---
+
+## Installation
+
+Clone the repo:
+```
 git clone <repo-url>
 cd Task-Tracker
-```</pre>
-2. Make sure Node.js is installed (>= v22 recommended).
+```
+Make sure Node.js is installed (>= v22 recommended).
 
 __Note__: 
 No dependencies are used for now.
 
-##Usage
+## Usage
 Run the CLI with Node:
 ```task <command> [arguments]```
 
@@ -39,11 +46,11 @@ __Notes__ on Statuses:
 - not-done -> Task pending
 - in-progress -> Task in progress
 
-##Development
+## Development
 - __Repository__: JsonTaskRepository handles storing tasks in tasks.json.
 - __Domain__: Task object with status logic.
 - __Use cases__: Like addTask, deleteTask, updateTask.
 - __Adapters__: CLI handles user input and output formatting.
 
-##License
+## License
 MIT License © 2026
