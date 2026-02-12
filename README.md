@@ -5,11 +5,11 @@ A simple task management tool built with Node.js using a clean architecture: dom
 
 ## Table of Contents
 
-1. [Installation](##Installation)
-2. [Usage](##Usage)
-3. [Commands](##Commands)
-4. [Development](##Development)
-5. [License](##License)
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Commands](#commands)
+4. [Development](#development)
+5. [License](#license)
 
 ---
 
@@ -25,9 +25,13 @@ Make sure Node.js is installed (>= v22 recommended).
 __Note__: 
 No dependencies are used for now.
 
+---
+
 ## Usage
 Run the CLI with Node:
 ```task <command> [arguments]```
+
+---
 
 ## Commands
 |Command|Description|Example|
@@ -46,11 +50,15 @@ __Notes__ on Statuses:
 - not-done -> Task pending
 - in-progress -> Task in progress
 
+---
+
 ## Development
 - __Repository__: JsonTaskRepository handles storing tasks in tasks.json.
 - __Domain__: Task object with status logic.
 - __Use cases__: Like addTask, deleteTask, updateTask.
 - __Adapters__: CLI handles user input and output formatting.
+
+---
 
 ## License
 MIT License © 2026
