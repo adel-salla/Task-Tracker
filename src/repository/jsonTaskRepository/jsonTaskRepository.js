@@ -90,8 +90,8 @@ class JsonTaskRepository {
             this.#createTask(task.id,
                 task.description,
                 task.status,
-                task.createdDate,
-                task.updatedDate
+                new Date(task.createdDate),
+                new Date(task.updatedDate)
             )
         );
     }

@@ -16,7 +16,7 @@ const CREATED_DATE_CELL = 25;
 const UPDATED_DATE_CELL = 25;
 
 function createHeaderRow(){
-    console.log('-'.repeat(11 + ID_CELL + DESCRIPTION_CELL + STATUS_CELL + CREATED_DATE_CELL + UPDATED_DATE_CELL));
+    console.log('-'.repeat(16 + ID_CELL + DESCRIPTION_CELL + STATUS_CELL + CREATED_DATE_CELL + UPDATED_DATE_CELL));
     console.log('|', "Id".padEnd(ID_CELL),
                 '|', "Description".padEnd(DESCRIPTION_CELL),
                 '|', "Status".padEnd(STATUS_CELL),
@@ -25,7 +25,7 @@ function createHeaderRow(){
 }
 
 function createRow(id, description, status, createdDate, updatedDate){
-    console.log('-'.repeat(11 + ID_CELL + DESCRIPTION_CELL + STATUS_CELL + CREATED_DATE_CELL + UPDATED_DATE_CELL));
+    console.log('-'.repeat(16 + ID_CELL + DESCRIPTION_CELL + STATUS_CELL + CREATED_DATE_CELL + UPDATED_DATE_CELL));
     console.log('|', String(id).padEnd(ID_CELL),
                 '|', String(description).padEnd(DESCRIPTION_CELL),
                 '|', String(status).padEnd(STATUS_CELL),
@@ -46,7 +46,7 @@ function createTable(tasks){
         createRow(id, description, status, createdDate, updatedDate);
     }
 
-    console.log('-'.repeat(11 + ID_CELL + DESCRIPTION_CELL + STATUS_CELL + CREATED_DATE_CELL + UPDATED_DATE_CELL));
+    console.log('-'.repeat(16 + ID_CELL + DESCRIPTION_CELL + STATUS_CELL + CREATED_DATE_CELL + UPDATED_DATE_CELL));
 }
 
 module.exports = { createTable };
